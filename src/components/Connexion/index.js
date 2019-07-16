@@ -15,7 +15,7 @@ class Connexion extends Component {
       password: '',
       redirect: false,
       errmsg: '',
-      redirectadmi: false,
+      redirectadmin: false,
     };
   }
 

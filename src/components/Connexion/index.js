@@ -15,7 +15,7 @@ class Connexion extends Component {
       password: '',
       redirect: false,
       errmsg: '',
-      redirectadminonsenbatlescouilles: false,
+      redirectadmi: false,
     };
   }
 
@@ -35,7 +35,7 @@ class Connexion extends Component {
         if (
           res.data['hydra:member'][0].role === 'admin'
         ) {
-          this.setState({ redirectadminonsenbatlescouilles: true });
+          this.setState({ redirectadmin: true });
         } else {
           this.setState({ redirect: true });
         }
@@ -62,9 +62,9 @@ class Connexion extends Component {
 
   render() {
     const {
-      username, password, redirect, errmsg, redirectadminonsenbatlescouilles,
+      username, password, redirect, errmsg, redirectadmin,
     } = this.state;
-    if (redirectadminonsenbatlescouilles) return <Redirect to="/admin" />;
+    if (redirectadmin) return <Redirect to="/admin" />;
     if (redirect) return <Redirect to="/map" />;
     return (
       <div className="wholeform">
